@@ -9,12 +9,12 @@ import java.util.Date;
  */
 public class User implements Serializable{
     String username, password, name, address, sdt;
-    Date birthday;
+    String birthday;
     ArrayList<order> userOrder = new ArrayList<>();
     public User(){
 
     }
-    public User(String username, String password, String name, String address, String sdt, Date birthday){
+    public User(String username, String password, String name, String address, String sdt, String birthday){
         this.username = username;
         this.password = password;
         this.name = name;
@@ -63,11 +63,11 @@ public class User implements Serializable{
         this.sdt = sdt;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 

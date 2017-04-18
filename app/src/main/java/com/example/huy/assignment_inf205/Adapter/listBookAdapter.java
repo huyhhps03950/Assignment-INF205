@@ -27,13 +27,17 @@ public class listBookAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = context.getLayoutInflater();
-        convertView = inflater.inflate(layoutId, null);
+
+        if (convertView == null) {
+            LayoutInflater inflater = context.getLayoutInflater();
+            convertView = inflater.inflate(layoutId, null);
+        }
 
         TextView tvName = (TextView) convertView.findViewById(R.id.tvListName);
         TextView tvTacgia = (TextView) convertView.findViewById(R.id.tvListTacgia);
         TextView tvSL = (TextView) convertView.findViewById(R.id.tvListSL);
         TextView tvTT = (TextView) convertView.findViewById(R.id.tvListStatus);
+
         book target = listBook.get(position);
         tvName.setText(target.getNamebook());
         tvTacgia.setText(target.getTacgia());

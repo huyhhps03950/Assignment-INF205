@@ -19,7 +19,10 @@
         </activity>
         <activity android:name=".Source_Code.MainActivity" />
         <activity android:name=".Source_Code.guestActivity" />
-        <activity android:name=".Source_Code.storeActivity"></activity>
+        <activity android:name=".Source_Code.storeActivity" />
+        <activity android:name=".Source_Code.AddActivity" />
+        <activity android:name=".Source_Code.FixActivity" />
+        <activity android:name=".Source_Code.RegisterActivity"></activity>
     </application>
 
 </manifest>

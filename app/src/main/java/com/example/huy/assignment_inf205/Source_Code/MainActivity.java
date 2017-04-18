@@ -7,22 +7,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.huy.assignment_inf205.Model.User;
 import com.example.huy.assignment_inf205.R;
 
 public class MainActivity extends AppCompatActivity {
     Button logGuess, logManager;
+    User main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GetAllWidgets();
+        main = (User) getIntent().getExtras().getSerializable("data");
         logGuess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Thành công", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, guestActivity.class);
                 Bundle b = new Bundle();
-                //b.putSerializable("data", main);
+                b.putSerializable("data", main);
                 i.putExtras(b);
                 startActivity(i);
             }
@@ -31,11 +33,7 @@ public class MainActivity extends AppCompatActivity {
         logManager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Thành công", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(MainActivity.this, storeActivity.class);
-                Bundle b = new Bundle();
-                //b.putSerializable("data", main);
-                i.putExtras(b);
                 startActivity(i);
             }
         });

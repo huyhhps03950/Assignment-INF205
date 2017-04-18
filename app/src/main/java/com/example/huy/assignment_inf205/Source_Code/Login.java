@@ -27,34 +27,33 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         Firebase.setAndroidContext(this);
-        root = new Firebase("https://assignment-inf205.firebaseio.com/Account");
+        root = new Firebase("https://assignment-inf205.firebaseio.com/");
         GetAllWidget();
-        /*tvDK.setOnClickListener(new View.OnClickListener() {
+        tvDK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Login.this,SignIn.class);
+                Intent i = new Intent(Login.this,RegisterActivity.class);
                 startActivity(i);
             }
-        });*/
+        });
 
         //Đăng nhập
         btnL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*final String name = edtUsername.getText().toString();
+                final String name = edtUsername.getText().toString();
                 final String pass = edtPass.getText().toString();
                 if (name.trim().isEmpty()) {
                     edtUsername.setError("Vui lòng nhập tên đăng nhập");
                 } else if (pass.trim().isEmpty()) {
                     edtPass.setError("Vui lòng nhập mật khẩu");
                 } else {
-                    root.child("User").child(name).addListenerForSingleValueEvent(new ValueEventListener() {
+                    root.child("khach-hang").child(name).addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             try {
                                 main = dataSnapshot.getValue(User.class);
                                 if (pass.equals(main.getPassword())) {
-
                                     Toast.makeText(Login.this, "Thành công", Toast.LENGTH_SHORT).show();
                                     Intent i = new Intent(Login.this, MainActivity.class);
                                     Bundle b = new Bundle();
@@ -79,13 +78,7 @@ public class Login extends AppCompatActivity {
 
                         }
                     });
-                }*/
-                Toast.makeText(Login.this, "Thành công", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(Login.this, MainActivity.class);
-                Bundle b = new Bundle();
-                //b.putSerializable("data", main);
-                i.putExtras(b);
-                startActivity(i);
+                }
             }
         });
     }

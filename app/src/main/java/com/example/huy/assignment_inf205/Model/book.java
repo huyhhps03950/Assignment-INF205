@@ -1,10 +1,12 @@
 package com.example.huy.assignment_inf205.Model;
 
 
+import java.io.Serializable;
+
 /**
  * Created by Huy on 04/13/2017.
  */
-public class book {
+public class book implements Serializable{
     String idbook, theloai, namebook, tacgia;
     int sl;
     boolean status;
